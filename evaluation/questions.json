@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "Show all students.",
+    "category": "basic"
+  },
+  {
+    "id": 2,
+    "question": "List all departments.",
+    "category": "basic"
+  },
+  {
+    "id": 3,
+    "question": "Show all courses and their credits.",
+    "category": "basic"
+  },
+  {
+    "id": 4,
+    "question": "Find students in Information Technology.",
+    "category": "filter"
+  },
+  {
+    "id": 5,
+    "question": "Find students in Computer Science.",
+    "category": "filter"
+  },
+  {
+    "id": 6,
+    "question": "Show students in academic year 2.",
+    "category": "filter"
+  },
+  {
+    "id": 7,
+    "question": "Find students whose marks are above 80.",
+    "category": "filter"
+  },
+  {
+    "id": 8,
+    "question": "Find students whose marks are below 75.",
+    "category": "filter"
+  },
+  {
+    "id": 9,
+    "question": "Show students who scored exactly 95.",
+    "category": "filter"
+  },
+  {
+    "id": 10,
+    "question": "List courses with 4 credits.",
+    "category": "filter"
+  },
+  {
+    "id": 11,
+    "question": "Show each student with their department name.",
+    "category": "join"
+  },
+  {
+    "id": 12,
+    "question": "Show each student with the courses they enrolled in.",
+    "category": "join"
+  },
+  {
+    "id": 13,
+    "question": "Show student names, course names and marks.",
+    "category": "join"
+  },
+  {
+    "id": 14,
+    "question": "Find students who scored above 80 in DBMS.",
+    "category": "join"
+  },
+  {
+    "id": 15,
+    "question": "List students enrolled in Operating Systems.",
+    "category": "join"
+  },
+  {
+    "id": 16,
+    "question": "Show students enrolled in Object Oriented Programming.",
+    "category": "join"
+  },
+  {
+    "id": 17,
+    "question": "Show each course with its enrolled students.",
+    "category": "join"
+  },
+  {
+    "id": 18,
+    "question": "Find all students in the Information Technology department with their marks.",
+    "category": "join"
+  },
+  {
+    "id": 19,
+    "question": "Show the average marks for each course.",
+    "category": "aggregate"
+  },
+  {
+    "id": 20,
+    "question": "Count the number of students in each department.",
+    "category": "aggregate"
+  },
+  {
+    "id": 21,
+    "question": "Find the highest mark in each course.",
+    "category": "aggregate"
+  },
+  {
+    "id": 22,
+    "question": "Find the lowest mark in each course.",
+    "category": "aggregate"
+  },
+  {
+    "id": 23,
+    "question": "Show the total number of enrollments per course.",
+    "category": "aggregate"
+  },
+  {
+    "id": 24,
+    "question": "Show departments whose average marks are above 80.",
+    "category": "having"
+  },
+  {
+    "id": 25,
+    "question": "Find courses with more than two enrollments.",
+    "category": "having"
+  },
+  {
+    "id": 26,
+    "question": "Show the top five highest marks.",
+    "category": "sorting"
+  },
+  {
+    "id": 27,
+    "question": "List students alphabetically by name.",
+    "category": "sorting"
+  },
+  {
+    "id": 28,
+    "question": "Show the three courses with the highest average marks.",
+    "category": "sorting"
+  },
+  {
+    "id": 29,
+    "question": "Find students who scored more than the overall average mark.",
+    "category": "subquery"
+  },
+  {
+    "id": 30,
+    "question": "Find the course with the highest average marks.",
+    "category": "subquery"
+  },
+  {
+    "id": 31,
+    "question": "Show students who are enrolled in DBMS and Data Structures.",
+    "category": "subquery"
+  },
+  {
+    "id": 32,
+    "question": "Find departments that have at least one student.",
+    "category": "subquery"
+  },
+  {
+    "id": 33,
+    "question": "Show the number of students enrolled in each semester.",
+    "category": "aggregate"
+  },
+  {
+    "id": 34,
+    "question": "Find students who have marks greater than 85 in any course.",
+    "category": "filter"
+  },
+  {
+    "id": 35,
+    "question": "Show the average marks by department and course.",
+    "category": "aggregate"
+  },
+  {
+    "id": 36,
+    "question": "List students with their grades in every enrolled course.",
+    "category": "join"
+  },
+  {
+    "id": 37,
+    "question": "Find courses where the average mark is at least 85.",
+    "category": "having"
+  },
+  {
+    "id": 38,
+    "question": "Show the count of students in each academic year.",
+    "category": "aggregate"
+  },
+  {
+    "id": 39,
+    "question": "Show all records from the StudentPerformance view.",
+    "category": "view"
+  },
+  {
+    "id": 40,
+    "question": "Find the average marks of students in each department, highest first.",
+    "category": "aggregate"
+  }
+]
