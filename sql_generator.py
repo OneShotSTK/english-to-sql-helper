@@ -1,5 +1,9 @@
-"""Ollama-based natural-language-to-SQL generation."""
-import requests
+
+"""Gemini-based natural-language-to-SQL generation."""
+
+from google import genai
+from google.genai import types
+
 from prompts.few_shot_examples import FEW_SHOT_EXAMPLES
 
 
@@ -7,8 +11,11 @@ class LLMError(RuntimeError):
     pass
 
 
-def generate_sql(question: str, schema: str, model: str = "llama3.1",
-                 base_url: str = "http://localhost:11434") -> str:
+def generate_sql(question: str, schema: str, api_key: str) -> str:
+
+    if not api_key:
+        raise LLMError("Gemini API key is missing. Please configure it.")
+
     examples = "\n\n".join(
         f"Question: {item['question']}\nSQL:\n{item['sql']}"
         for item in FEW_SHOT_EXAMPLES
@@ -28,6 +35,7 @@ Rules:
    return: NEED_CLARIFICATION: followed by a short explanation.
 7. Return SQL only, without Markdown fences or commentary.
 
+DATABASE SCHEMA:
 {schema}
 
 EXAMPLES:
@@ -40,23 +48,30 @@ SQL:
 """.strip()
 
     try:
-        response = requests.post(
-            f"{base_url.rstrip('/')}/api/generate",
-            json={"model": model, "prompt": prompt, "stream": False,
-                  "options": {"temperature": 0}},
-            timeout=90,
+        client = genai.Client(api_key=api_key)
+
+        response = client.models.generate_content(
+            model="gemini-3.5-flash-lite",
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0,
+                max_output_tokens=1024,
+            ),
         )
-        response.raise_for_status()
-        result = response.json().get("response", "").strip()
-    except requests.RequestException as exc:
+
+        result = (response.text or "").strip()
+
+    except Exception as exc:
         raise LLMError(
-            "Could not reach Ollama. Is Ollama running and the model downloaded?"
+            f"Gemini API request failed: {exc}"
         ) from exc
 
     if result.startswith("```"):
-        result = result.replace("```sql", "").replace("```SQL", "")
+        result = result.replace("```sql", "")
+        result = result.replace("```SQL", "")
         result = result.replace("```", "").strip()
 
     if not result:
-        raise LLMError("The model returned an empty response.")
+        raise LLMError("Gemini returned an empty response.")
+
     return result
