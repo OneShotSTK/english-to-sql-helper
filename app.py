@@ -13,9 +13,9 @@ from sql_generator import generate_sql, LLMError
 from sql_validator import validate_read_only_sql, SQLValidationError
 
 
-# --------------------------------------------------
+# -------------------------------------------------
 # PAGE CONFIGURATION
-# --------------------------------------------------
+# -------------------------------------------------
 
 st.set_page_config(
     page_title="English-to-SQL Helper",
